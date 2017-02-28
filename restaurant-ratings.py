@@ -15,8 +15,13 @@ def print_alpha_restaurant_ratings(filename):
 
         restaurant_ratings[restaurant_name] = restaurant_rating
 
+    sorted_restaurants = sorted(restaurant_ratings)
 
-    print restaurant_ratings
+    for restaurant in sorted_restaurants:
+        restaurant_rating = restaurant_ratings[restaurant]
+        print "{} is rated at {}.".format(restaurant, restaurant_rating)
+
+
     ratings_file.close()
 
 print_alpha_restaurant_ratings("scores.txt")
