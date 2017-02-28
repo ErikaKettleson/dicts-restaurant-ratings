@@ -6,10 +6,17 @@ def print_alpha_restaurant_ratings(filename):
 
     ratings_file = open(filename)
 
+    restaurant_ratings = {}
+
     for line in ratings_file:
         restaurant_info = line.rstrip().split(":")
+        restaurant_name = restaurant_info[0]
+        restaurant_rating = restaurant_info[1]
+
+        restaurant_ratings[restaurant_name] = restaurant_rating
 
 
+    print restaurant_ratings
     ratings_file.close()
 
 print_alpha_restaurant_ratings("scores.txt")
